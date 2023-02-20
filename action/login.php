@@ -7,6 +7,10 @@
     $result = mysqli_query($cn,$query) or die('cant run query');
     $row = mysqli_num_rows($result);
     if($row > 0){
+        $r = mysqli_fetch_array($result);
+        $user = $r['name'];
+        session_start();
+        $_SESSION['user'] = $user;
         header('location:../home.php');
     } else {
         $error = "Cant fount user";

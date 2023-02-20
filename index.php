@@ -4,6 +4,10 @@
         <div class="col-lg-4">
            <form action="action/login.php" method="get">
                 <?php 
+                    if(!empty($_SESSION['user'])){
+                        header('location:home.php');
+                    }
+
                     if(!empty($_GET['error'])){
                 ?>
                     <font color="red"><b><?php echo $_GET['error']; ?></b></font>

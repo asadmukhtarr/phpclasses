@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +18,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
-                </li>
+                <?php 
+                    if(empty($_SESSION['user'])){
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="register.php">Register</a>
                 </li>
+                <?php
+                    } else {
+                ?>
+                 <li class="nav-item active">
+                    <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="action/logout.php">Logout <span class="sr-only">(current)</span></a>
+                </li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Products')
 @section('content')
 <main class="main">
         	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">

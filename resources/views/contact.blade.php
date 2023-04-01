@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Contact')
 @section('content')
 <main class="main">
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
